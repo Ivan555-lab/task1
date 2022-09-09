@@ -9,7 +9,7 @@ from .models import Profile
 
 def post_list(request):
     posts = Post.published.all()
-    return render(request, 'shop/product/list.html', {'posts': posts})
+    return render(request, 'shop/product/404.html', {'posts': posts})
 
 def post_detail(request, year, month, day, post):
     post = get_object_or_404(Post, slug=post,status='published',publish__year=year,
